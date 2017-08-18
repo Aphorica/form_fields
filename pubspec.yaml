@@ -1,0 +1,16 @@
+name: 'form_fields'
+description: 'Set of FormFields corresponding to input fields, with data persister.'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  uses-material-design: true
+
+
