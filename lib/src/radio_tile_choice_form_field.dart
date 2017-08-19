@@ -2,6 +2,8 @@ import 'dart:math' as Math;
 
 import 'package:flutter/material.dart';
 
+enum YesNoChoice { yes, no, unknown }
+
 typedef void OnRadioTileChoiceChanged<T>(T value);
 
 enum ChoiceLayoutDir { row, column }
@@ -46,8 +48,7 @@ class ChoiceDescriptorItem<T> {
 ///     ImageData imageData = new ImageData;
 ///
 ///     FormFieldStatePersister persister = new FormFieldStatePersister();
-///     persister.addPersister('Background', Background.bg_black,
-///                             new ValueNotifier<Background>(imageData.background), update);
+///     persister.addSimplePersister('Background', Background.bg_black, update);
 ///
 ///     void update() { setState((){}); }
 ///
@@ -57,10 +58,7 @@ class ChoiceDescriptorItem<T> {
 ///           children: [
 ///             new RadioTileChoiceFormField<Background>(
 ///               title: 'Background Color',
-///               persister: persister['Background'],
-///               onSaved: (Background value) {
-///                   imageData.background = value;
-///                 },
+///               persister: persister['Background'].persister,
 ///               choiceDescriptors: <ChoiceDescriptorItem>[
 ///                  new ChoiceDescriptorItem(
 ///                    label: 'Black',
