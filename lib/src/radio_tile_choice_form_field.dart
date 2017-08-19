@@ -147,6 +147,10 @@ class RadioTileChoiceFormField<T> extends FormField<T> {
                                  List<ChoiceDescriptorItem> choiceDescriptors) {
       Flex radioList;
 
+      if (Form.of(field.context).widget.autovalidate) {
+        field.validate();
+      }
+
       if (itemsPerRow < choiceDescriptors.length || field.hasError) {
               // multi-row
 
