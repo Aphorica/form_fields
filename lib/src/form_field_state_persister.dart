@@ -91,6 +91,12 @@ class FormFieldStatePersister {
   String _textPersisterToString(String name, ValueNotifier<dynamic> persister) =>
       (persister as TextEditingController).value.text;
 
+  static String switchPersisterToString(String name, ValueNotifier<dynamic> persister) =>
+                                        persister.value? 'On' : 'Off';
+
+  static String checkboxPersisterToString(String name, ValueNotifier<dynamic> persister) =>
+                                          persister.value? 'Checked' : 'Unchecked';
+
   /// Add a persister (ValueNotifier - bare or derived instance)
   ///
   /// ### Notes:
@@ -123,8 +129,9 @@ class FormFieldStatePersister {
     }
 
     if (toString == null) {
-      toString = persister.runtimeType == TextEditingController?
-        _textPersisterToString : _defaultPersisterToString;
+      toString =
+        persister.runtimeType == TextEditingController? _textPersisterToString :
+                                                        _defaultPersisterToString;
     }
 
     FieldStatePersisterItem item =

@@ -30,7 +30,7 @@ class SwitchListTileFormField extends FormField<bool>{
         subtitle: subtitle,
         onChanged: (bool value) {
           persister.value = value;
-          field.onChanged;
+          field.onChanged(value);
         }
       );
     }
