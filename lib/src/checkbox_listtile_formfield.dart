@@ -28,7 +28,11 @@ class CheckboxListTileFormField extends FormField<bool>{
           selected: selected,
           title: title,
           subtitle: subtitle,
-          onChanged: field.onChanged);
+          onChanged: (bool value) {
+            persister.value = value;
+            field.onChanged(value);
+            }
+          );
         }
     );
 }
