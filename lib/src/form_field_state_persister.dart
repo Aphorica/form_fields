@@ -60,8 +60,12 @@ class FieldStatePersisterItem<T> {
 ///    a cleartext representation.
 ///
 class FormFieldStatePersister {
+  VoidCallback _cb;
+
   Map<String, FieldStatePersisterItem<dynamic>> _persisterList =
                                    <String, FieldStatePersisterItem<dynamic>>{};
+
+  FormFieldStatePersister (VoidCallback cb ) : _cb=cb ;
 
   void _defaultPersisterReset(String name, ValueNotifier<dynamic> persister,
     dynamic initialValue) {
@@ -80,10 +84,14 @@ class FormFieldStatePersister {
       return str.replaceAll(new RegExp('_'), ' ');
   }
 
+  void _internalCB() {
+    _cb();
+  }
+
   String _textPersisterToString(String name, ValueNotifier<dynamic> persister) =>
       (persister as TextEditingController).value.text;
 
-    /// Add a persister (ValueNotifier - bare or derived instance)
+  /// Add a persister (ValueNotifier - bare or derived instance)
   ///
   /// ### Notes:
   ///  - 'cb' is the callback to invoke when the value changes.  Typically, this
@@ -103,7 +111,6 @@ class FormFieldStatePersister {
   ///      to set the value, you will need to provide this function.
   ///
   void addSimplePersister(String name, dynamic initialValue,
-                    Function cb,
                     [StatePersisterToString toString,
                      StatePersisterReset reset])
   {
@@ -125,7 +132,7 @@ class FormFieldStatePersister {
 
     item.resetToInitialValue();
 
-    persister.addListener(cb);
+    persister.addListener(_internalCB);
     _persisterList[name] = item;
   }
 

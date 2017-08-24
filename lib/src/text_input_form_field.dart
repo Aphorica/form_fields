@@ -56,7 +56,6 @@ class TextInputFormField extends FormField<String> {
       super(
       key: key,
       initialValue: controller != null ? controller.value.text : '',
-      onSaved: onSaved,
       validator: validator,
       builder: (FormFieldState<String> field) {
 
