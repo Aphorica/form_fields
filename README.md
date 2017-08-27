@@ -14,10 +14,14 @@ dropped data.
 
 ## FormField
 This package intends to create FormField-derived classes for all of
-the input widgets.  At the moment, only one additional class is
+the input widgets, starting with the \*Tile classes (the labelled
+classes):
 implemented:
 
  - RadioTileChoiceFormField - for RadioTiles (labelled RadioButtons).
+ - CheckboxTileFormField - for CheckboxTiles
+ - SwitchTileFormField - for SwitchTiles
+ - TextInputFormField - reimplementation of TextFormField that corrects an update issue
 
 More are planned.
 
@@ -32,6 +36,15 @@ in the case of the TextFormField class, the TextEditingController
 is derived from 'ValueNotifier' and integrates seamlessly with
 this library.
 
+## Testing/Demos
+Check out the following repos that are combined tests/demos:
+<dl>
+<dt><a href="https://github.com/rickbsgu/rbtile_formfield_demo" target="_blank">rbtile_formfield_demo</a></dt>
+<dd>Demos radiobutton tiles in various configurations.</dd>
+<dt><a href="https://github.com/rickbsgu/gen_formfields_demo" target="_blank">gen_formfields_demo</a></dt>
+<dd>
+Intended to be a more complete demo.  Currently tests _CheckboxTileFormField_ and _SwitchTileFormField_</dd>
+</dl>
 ## TODOS
 An working example for what has been implemented so far (
 called rb_tile_formfield_demo) will be provided here on
