@@ -45,13 +45,9 @@ Check out the following repos that are combined tests/demos:
 <dd>
 Intended to be a more complete demo.  Currently tests _CheckboxTileFormField_ and _SwitchTileFormField_</dd>
 </dl>
-## TODOS
-An working example for what has been implemented so far (
-called rb_tile_formfield_demo) will be provided here on
-github as soon as I can get it uploaded.
 
-Beyond that:
- - Obviously add more FormField implementations.
+## TODOS
+ - Add more FormField implementations.
  - More documentation.
  - Fix bugs.
 
