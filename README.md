@@ -1,5 +1,5 @@
 # form_fields
-### Rick Berger, Aphorica Inc <rickb@aphorica.com>
+### Rick Berger, Aphorica Inc <gbergeraph@gmail.com>
 
 Set of FormFields corresponding to input fields, with data persister
 
